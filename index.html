@@ -1,1 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protege el Futuro de Tu Familia | Seguros de Vida</title>
+    <meta name="description" content="Seguro de vida accesible para familias latinas en USA. Cotización gratis en español. Protege a tus hijos desde $1 al día.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.95), rgba(118, 75, 162, 0.95)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23667eea" width="1200" height="600"/></svg>');
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .hero .cta-primary {
+            display: inline-block;
+            background: #FFD700;
+            color: #333;
+            padding: 18px 40px;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+        
+        .hero .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+        
+        .hero .trust-badge {
+            margin-top: 30px;
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            background: #f8f9fa;
+        }
+        
+        .benefits h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #667eea;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .benefit-card .icon {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #764ba2;
+        }
+        
+        .benefit-card p {
+            color: #666;
+            font-size: 1.05em;
+        }
+        
+        /* Price Section */
+        .price-section {
+            background: white;
+            text-align: center;
+        }
+        
+        .price-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .price-highlight {
+            font-size: 4em;
+            color: #4CAF50;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .price-highlight small {
+            font-size: 0.4em;
+            color: #666;
+        }
+        
+        .price-comparison {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        /* Form Section */
+        .form-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+        
+        .form-section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        .form-section .subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+        }
+        
+        .form-note {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: #f8f9fa;
+        }
+        
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #667eea;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-card .stars {
+            color: #FFD700;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-card .quote {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+        
+        .testimonial-card .author {
+            font-weight: bold;
+            color: #764ba2;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            background: white;
+        }
+        
+        .faq h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #333;
+        }
+        
+        .faq-item {
+            background: #f8f9fa;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background: #667eea;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background 0.3s;
+        }
+        
+        .faq-question:hover {
+            background: #5568d3;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+            background: white;
+        }
+        
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        footer .social-links {
+            margin: 20px 0;
+        }
+        
+        footer .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+        
+        footer .social-links a:hover {
+            color: #FFD700;
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2em;
+            }
+            
+            .price-highlight {
+                font-size: 2.5em;
+            }
+            
+            .contact-form {
+                padding: 25px;
+            }
+        }
+        
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>🛡️ Protege el Futuro de Tu Familia</h1>
+        <p class="subtitle">Seguro de vida accesible para padres que quieren lo mejor para sus hijos</p>
+        <a href="#cotizacion" class="cta-primary">Obtener Mi Cotización Gratis →</a>
+        <p class="trust-badge">✓ Asesoría en Español • ✓ Sin Compromiso • ✓ Respuesta en 24 Horas</p>
+    </section>
 
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2>¿Por Qué Necesitas un Seguro de Vida?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="icon">🎓</div>
+                    <h3>Educación Garantizada</h3>
+                    <p>Asegura que tus hijos puedan ir a la universidad sin importar qué pase</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">🏠</div>
+                    <h3>Protege Tu Hogar</h3>
+                    <p>Tu familia podrá mantener su casa y estilo de vida</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">💰</div>
+                    <h3>Tranquilidad Financiera</h3>
+                    <p>Cubre gastos, deudas y el futuro de tus seres queridos</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">😌</div>
+                    <h3>Paz Mental</h3>
+                    <p>Duerme tranquilo sabiendo que tu familia está protegida</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">📞</div>
+                    <h3>Servicio en Español</h3>
+                    <p>Asesoría personalizada que entiende tu cultura y necesidades</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">⚡</div>
+                    <h3>Proceso Rápido</h3>
+                    <p>Cotización en minutos, sin papeleos complicados</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Section -->
+    <section class="price-section">
+        <div class="container">
+            <h2>Más Accesible de lo que Piensas</h2>
+            <div class="price-highlight">
+                Desde <span style="color: #FFD700;">$1</span> <small>al día</small>
+            </div>
+            <p class="price-comparison">Menos que un café ☕ • Protección que vale millones 💎</p>
+            <a href="#cotizacion" class="cta-primary">Ver Mi Precio Personalizado</a>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Lo Que Dicen Nuestras Familias</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="quote">"Ahora sé que mis hijos podrán terminar la universidad pase lo que pase. Es la mejor inversión que he hecho."</p>
+                    <p class="author">- María G., Madre de 3</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="quote">"El proceso fue súper fácil y en español. Me explicaron todo claramente sin presionarme."</p>
+                    <p class="author">- Carlos R., Padre de 2</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="quote">"No sabía que era tan económico. Por menos de lo que gasto en salir a comer, tengo protegida a mi familia."</p>
+                    <p class="author">- Ana L., Mamá Soltera</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-section" id="cotizacion">
+        <div class="container">
+            <h2>Recibe Tu Cotización Gratuita</h2>
+            <p class="subtitle">Sin compromiso • Respuesta en 24 horas • Completamente confidencial</p>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo *</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Juan Pérez">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefono">Teléfono *</label>
+                    <input type="tel" id="telefono" name="telefono" required placeholder="(555) 123-4567">
+                </div>
+                
+                <div class="form-group">
+                    <label for="edad">Edad *</label>
+                    <select id="edad" name="edad" required>
+                        <option value="">Selecciona tu edad</option>
+                        <option value="18-25">18-25 años</option>
+                        <option value="26-35">26-35 años</option>
+                        <option value="36-45">36-45 años</option>
+                        <option value="46-55">46-55 años</option>
+                        <option value="56+">56+ años</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="hijos">¿Cuántos hijos tienes?</label>
+                    <select id="hijos" name="hijos">
+                        <option value="1">1 hijo</option>
+                        <option value="2">2 hijos</option>
+                        <option value="3">3 hijos</option>
+                        <option value="4+">4 o más</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mensaje">¿Qué te gustaría saber? (opcional)</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos qué tipo de protección buscas..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">🛡️ Obtener Mi Cotización Gratis</button>
+                
+                <p class="form-note">🔒 Tu información está 100% protegida y nunca será compartida</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2>Preguntas Frecuentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Realmente cuesta solo $1 al día?
+                </div>
+                <div class="faq-answer">
+                    Sí, dependiendo de tu edad, salud y el monto de cobertura que elijas, muchas pólizas comienzan desde $30-40 al mes, que es aproximadamente $1 al día. Te daremos un precio exacto personalizado.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Necesito examen médico?
+                </div>
+                <div class="faq-answer">
+                    Depende del tipo de póliza y monto de cobertura. Muchas pólizas no requieren examen médico o solo necesitan algunas preguntas de salud. Te explicamos todas las opciones.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Puedo obtener seguro si no tengo papeles?
+                </div>
+                <div class="faq-answer">
+                    Sí, hay opciones disponibles independientemente de tu estatus migratorio. Trabajamos con compañías que aceptan ITIN y otras formas de identificación.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Qué pasa si dejo de pagar?
+                </div>
+                <div class="faq-answer">
+                    La mayoría de las pólizas tienen un período de gracia. Además, hay opciones para pausar o ajustar pagos según tu situación. Tu asesor te explicará todas las protecciones.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ¿La cotización realmente es gratis y sin compromiso?
+                </div>
+                <div class="faq-answer">
+                    Absolutamente. No hay ningún costo ni obligación por recibir una cotización. Solo queremos ayudarte a entender tus opciones para que tomes la mejor decisión para tu familia.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>¿Listo para Proteger a Tu Familia?</h3>
+            <p>Contáctame hoy y recibe tu cotización personalizada</p>
+            
+            <div class="social-links">
+                <a href="https://facebook.com/tupagina" target="_blank">📘 Facebook</a>
+                <a href="https
