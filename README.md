@@ -1,1 +1,1 @@
-# landing-seguros
+landing-seguros
