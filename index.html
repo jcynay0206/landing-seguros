@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acelerador de Riqueza | JCNay Vida Team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .neo-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+    </style>
+</head>
+<body class="bg-slate-900 text-white min-h-screen flex items-center justify-center p-6">
+
+    <div class="max-w-md w-full bg-white/5 border border-white/10 p-8 rounded-[2.5rem] backdrop-blur-xl">
+        <h2 class="text-2xl font-black italic mb-2 text-blue-400 uppercase">Acelerador de Riqueza</h2>
+        <p class="text-slate-400 text-xs mb-8">Calcula el costo de oportunidad de tus deudas actuales.</p>
+
+        <div class="space-y-6">
+            <div>
+                <label class="block text-[10px] uppercase font-bold text-slate-500 mb-2">Total de Deuda (Tarjetas/Préstamos)</label>
+                <input type="number" id="deuda" placeholder="Ej: 5000" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500 transition">
+            </div>
+
+            <div>
+                <label class="block text-[10px] uppercase font-bold text-slate-500 mb-2">Interés Promedio Anual (%)</label>
+                <input type="number" id="interes" placeholder="Ej: 18" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500 transition">
+            </div>
+
+            <button onclick="calcular()" class="w-full bg-blue-600 hover:bg-blue-700 py-4 rounded-xl font-black transition-all transform active:scale-95 shadow-lg shadow-blue-500/20">
+                CALCULAR COSTO DE OPORTUNIDAD
+            </button>
+
+            <div id="resultado" class="hidden mt-8 p-6 bg-blue-600/10 border border-blue-500/30 rounded-2xl animate-fade-in">
+                <p class="text-[10px] uppercase font-bold text-blue-400 mb-1">En 20 años, este dinero en un IUL sería:</p>
+                <h3 id="valor-futuro" class="text-3xl font-black text-white">$0.00</h3>
+                <p class="text-[9px] text-slate-500 mt-4 italic">*Cálculo basado en un 7% de retorno indexado promedio.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calcular() {
+            const deuda = parseFloat(document.getElementById('deuda').value);
+            const interes = parseFloat(document.getElementById('interes').value);
+            
+            if (deuda > 0) {
+                // Pago anual de solo intereses que se "pierde"
+                const pagoAnualInteres = deuda * (interes / 100);
+                
+                // Cálculo de valor futuro en IUL (7% interés compuesto)
+                // VF = P * [((1 + r)^n - 1) / r]
+                const r = 0.07;
+                const n = 20;
+                const valorFuturo = pagoAnualInteres * (Math.pow(1 + r, n) - 1) / r;
+
+                document.getElementById('valor-futuro').innerText = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(valorFuturo);
+                document.getElementById('resultado').classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
